@@ -1,5 +1,6 @@
 package dev.java.ecommerce.basketservice.controller;
 
+import dev.java.ecommerce.basketservice.controller.request.BasketRequest;
 import dev.java.ecommerce.basketservice.entity.Basket;
 import dev.java.ecommerce.basketservice.service.BasketService;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +20,6 @@ public class BasketController {
 
     @PostMapping
     public ResponseEntity<Basket> createBasket(@RequestBody BasketRequest request){
-        return ResponseEntity.status(HttpStatus.CREATED).body(basketService.createBasket());
+        return ResponseEntity.status(HttpStatus.CREATED).body(basketService.createBasket(request));
     }
 }

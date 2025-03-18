@@ -1,5 +1,4 @@
 package dev.java.ecommerce.basketservice.controller;
-
 import dev.java.ecommerce.basketservice.controller.request.BasketRequest;
 import dev.java.ecommerce.basketservice.entity.Basket;
 import dev.java.ecommerce.basketservice.repository.BasketRepository;
@@ -28,7 +27,9 @@ public class BasketController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Basket> updateBasket(@PathVariable String id, @RequestBody BasketRequest request){
-        return ResponseEntity.status(HttpStatus.OK).body(basketService.createBasket(id, request));
+    public ResponseEntity<Basket> updateBasket(@PathVariable String id, @RequestBody BasketRequest request) {
+        return ResponseEntity.status(HttpStatus.OK).body(basketService.updateBasket(id, request));
     }
+
+
 }

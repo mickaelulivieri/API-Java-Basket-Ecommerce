@@ -27,6 +27,8 @@ public class Basket {
 
     private Status status;
 
+    private PaymentMethod paymentMethod;
+
     public void calculateTotalPrice(){
         this.totalPrice = products.stream()
                 .map(product -> product.getPrice().multiply(BigDecimal.valueOf(product.getQuantity())))
